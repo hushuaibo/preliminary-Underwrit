@@ -96,7 +96,7 @@ Page({
                       
                       app.globalData.userInfo = res.detail.userInfo
                       this.setData({
-                        userInfo: e.detail.userInfo,
+                        userInfo: res.detail.userInfo,
                         hasUserInfo: true
                       })
                       wx.switchTab({
