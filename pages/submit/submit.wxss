@@ -1,1 +1,24 @@
 /* pages/submit/submit.wxss */
+.Main{
+    width: 90%;
+    height: 100rpx;
+    border-bottom: 1rpx solid #ccc; 
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.Title{
+    width: 120rpx;
+    color: gray;
+    font-size: 14px;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.ipt,.picker{
+    width: 555rpx;
+    font-size: 13px;
+    padding-right: 5%;
+    text-align: right;
+}
