@@ -8,9 +8,9 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-
-    employeeId: '',
-    company: '',
+    array: ['中国未来工作室未来工作室', '未来工作室测试2号', '未来工作室测试3号', '未来工作室测试4号'],
+    index: 0,
+    employeeId: ''
   },
 
   onLoad: function () {
@@ -53,23 +53,29 @@ Page({
       })
     }
   },
-  bindKeycompany: function (e) {
-    let val = e.detail.value;
-    this.setData({
-      company: val
-    })
-  },
+  // bindKeycompany: function (e) {
+  //   let val = e.detail.value;
+  //   this.setData({
+  //     company: val
+  //   })
+  // },
   bindKeyemployee: function (e) {
     let val = e.detail.value;
     this.setData({
       employeeId: val
     })
   },
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', this.data.array[e.detail.value]);
+    this.setData({
+      index: e.detail.value,
+    })
+  },
   login: function (e) {
     let that = this;
     if (that.data.employeeId != '' && that.data.company != '') {
       let employeeId = that.data.employeeId;
-      let company = that.data.company;
+      let company = that.data.array[that.data.index];
       wx.login({
         success: function (res) {
           var code = res.code;//登录凭证
@@ -93,15 +99,18 @@ Page({
                   },
                   success: function (res) {
                       console.log(res);
-                      
-                      app.globalData.userInfo = res.detail.userInfo
-                      this.setData({
-                        userInfo: e.detail.userInfo,
-                        hasUserInfo: true
-                      })
-                      wx.switchTab({
-                        url: './../index/index'
-                      })
+                      if(res.data.status ==1){
+                        app.globalData.userInfo = res.data.userInfo;
+                        that.setData({
+                          userInfo: res.data.userInfo,
+                          hasUserInfo: true
+                        });
+                        wx.switchTab({
+                          url: './../index/index'
+                        })
+                      }else{
+                        console.log("登录失败");
+                      }
                   }
                 })
 
