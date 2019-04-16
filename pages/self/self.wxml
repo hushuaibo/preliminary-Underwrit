@@ -1,0 +1,15 @@
+<!-- pages/self/self.wxml -->
+<view class="login-logo text-center">预</view>
+
+<view  class="login-cont">
+  <view class="login-input"><input class="inputs"  bindinput="bindKeycompany" placeholder="请输入您的公司名称" /></view>
+  <view  class="login-input"><input class="inputs"  bindinput="bindKeyemployee"   placeholder="请输入您的工号" /></view>
+ 
+  <button class="button text-center" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="login" > 
+      微信登录
+   </button>
+   <block wx:else>
+   请更新您的微信
+   </block>
+</view>
+

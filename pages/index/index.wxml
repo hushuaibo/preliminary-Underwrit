@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+  
+    <block wx:if="{hasUserInfo}">
+      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{motto}} {{userInfo.nickName}}</text>
+    </block>
+    <view class="tit">
+       预核保：客户投保前，通过各种途径和方式，将客户的基本资料，意向投保险种、保额、自身身体健康等信息送达至保险公司核保处。
+    </view>
+  </view>
+
+
+  <!-- <view class="userdown">
+    <button bindtap="loginoutClick">退出登录</button>
+  </view> -->
+</view>

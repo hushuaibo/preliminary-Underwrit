@@ -1,0 +1,53 @@
+/* pages/self/self.wxss */
+
+.text-center{
+  text-align: center;
+}
+.login-logo {
+  width:100px;
+  height: 100px;
+  background: #10a78e;
+  margin: 50px auto;
+  color: #fff;
+  line-height: 100px;
+  font-size: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  overflow: hidden !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+
+}
+.login-cont {
+  margin: 0 20px;
+  line-height: 50px;
+}
+
+.login-cont .login-input {
+  border-bottom: 1px solid #ebebeb;
+  height: 40px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  line-height: 40px;
+}
+
+.login-cont .login-input .inputs {
+  border: none;
+  height: 40px;
+  width: 100%;
+  outline: 0;
+}
+
+
+.button {
+  background: #10a78e;
+  color: #fff;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  margin-top: 40px;
+}
