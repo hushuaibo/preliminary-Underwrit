@@ -4,12 +4,14 @@
     <input class='ipt' type='text' placeholder='请填写'></input>
 </view>
 
-<picker class='Main' bindchange="bindPickerChange" value="{{index}}" range="{{Gender}}">
-    <view class='Title'>性别</view>
+<view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{Gender}}">
     <view class="picker">
-        {{Gender[index]}}
+      <view>性别</view>
+      <view class='paddingRight'>{{Gender[index]}}</view>
     </view>
-</picker>
+  </picker>
+</view>
 
 <view class='Main'>
     <view class='Title'>手机号</view>

@@ -16,9 +16,24 @@
     height: 100rpx;
     line-height: 100rpx;
 }
-.ipt,.picker{
-    width: 555rpx;
+.ipt{
+    width: 500rpx;
     font-size: 13px;
     padding-right: 5%;
-    text-align: right;
+    text-align: right;  
+}
+.picker{
+    width: 90%;
+    height: 100rpx;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    color: gray;
+    border-bottom: 1px solid #ccc; 
+    justify-content: space-between;
+    align-items: center;
+}
+.paddingRight{
+    padding-right: 30rpx
 }
