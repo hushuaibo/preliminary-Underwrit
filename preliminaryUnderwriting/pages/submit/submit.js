@@ -25,6 +25,31 @@ Page({
             date: e.detail.value
         })
     },
+    /* 
+     *表单提交数据 
+    */
+    formSubmit: function (e) {  
+        wx.request({
+            url: 'URL',
+            header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method: "POST",
+            data: {
+                userName: e.detail.value.userName, 
+                userGender: e.detail.value.userGender, 
+                userBirth: e.detail.value.userBirth, 
+                userHealthy: e.detail.value.userHealthy
+            },
+            success: function (res) {
+                wx.showToast({
+                    title: '数据提交成功!',
+                    icon: 'loading',
+                    duration: 1500
+                })
+            }
+        })
+    },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,31 +1,33 @@
 <!--pages/submit/submit.wxml-->
-<view class='Main'>
-    <view class='Title'>姓名</view>
-    <input class='ipt' type='text' placeholder='请填写'></input>
-</view>
-
-<view class="section">
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{Gender}}">
-    <view class="picker">
-      <view>性别</view>
-      <view class='paddingRight'>{{Gender[index]}}</view>
+<form report-submit='false' bindsubmit="formSubmit">
+    <view class='Main'>
+        <view class='Title'>姓名</view>
+        <input class='ipt' name='userName' type='text' placeholder='请填写'></input>
     </view>
-  </picker>
-</view>
 
-<view class="section">
-  <picker mode="date" value="{{date}}" start="1900-01-01" end="2019-12-30" bindchange="bindDateChange">
-    <view class="picker">
-      <view>出生年月</view>
-      <view class='paddingRight'>{{date}}</view>
+    <view class="section">
+    <picker bindchange="bindPickerChange" name="userGender" value="{{index}}" range="{{Gender}}">
+        <view class="picker">
+        <view>性别</view>
+        <view class='paddingRight'>{{Gender[index]}}</view>
+        </view>
+    </picker>
     </view>
-  </picker>
-</view>
 
-<view class="section">
-  <textarea class='textarea' placeholder="客户健康状况"  />
-</view>
+    <view class="section">
+    <picker mode="date" value="{{date}}" name="userBirth" start="1900-01-01" end="2019-12-30" bindchange="bindDateChange">
+        <view class="picker">
+        <view>出生年月</view>
+        <view class='paddingRight'>{{date}}</view>
+        </view>
+    </picker>
+    </view>
 
-<view class='btn'>
-    <button class='button'>提交信息</button>
-</view>
+    <view class="section">
+    <textarea class='textarea' name="userHealthy" placeholder="客户健康状况"  />
+    </view>
+
+    <view class='btn'>
+        <button class='button' form-type='submit'>提交信息</button>
+    </view>
+</form>
