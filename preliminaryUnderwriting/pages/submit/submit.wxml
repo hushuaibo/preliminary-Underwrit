@@ -13,7 +13,19 @@
   </picker>
 </view>
 
-<view class='Main'>
-    <view class='Title'>手机号</view>
-    <input class='ipt' type='number' placeholder='请填写'></input>
+<view class="section">
+  <picker mode="date" value="{{date}}" start="1900-01-01" end="2019-12-30" bindchange="bindDateChange">
+    <view class="picker">
+      <view>出生年月</view>
+      <view class='paddingRight'>{{date}}</view>
+    </view>
+  </picker>
+</view>
+
+<view class="section">
+  <textarea class='textarea' placeholder="客户健康状况"  />
+</view>
+
+<view class='btn'>
+    <button class='button'>提交信息</button>
 </view>
