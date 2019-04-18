@@ -10,15 +10,59 @@
     align-items: center;
 }
 .Title{
-    width: 120rpx;
+    width: 135rpx;
     color: gray;
     font-size: 14px;
     height: 100rpx;
     line-height: 100rpx;
 }
-.ipt,.picker{
-    width: 555rpx;
+.ipt{
+    width: 500rpx;
     font-size: 13px;
     padding-right: 5%;
-    text-align: right;
+    text-align: right;  
+}
+.picker{
+    width: 90%;
+    height: 100rpx;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    color: gray;
+    border-bottom: 1px solid #ccc; 
+    justify-content: space-between;
+    align-items: center;
+}
+.paddingRight{
+    padding-right: 35rpx;
+    color: #000;
+}
+.textarea{
+    width: 88%;
+    height: 250rpx;
+    margin: 30rpx auto;
+    font-size: 14px;
+    padding-right: 2%;
+    line-height: 50rpx;
+}
+.btn{
+    width: 90%;
+    height: 200rpx;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    bottom: 10rpx;
+    left: 50%;
+    margin-left: -45%;
+    display: flex;
+    align-items: center;
+}
+.button{
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 50rpx;
+    background-color: #4DAFE3;
+    color: white;
+    font-size: 16px;
 }
