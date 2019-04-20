@@ -1,2 +1,16 @@
 <!--pages/own/own.wxml-->
-<text>pages/own/own.wxml</text>
+<view class='Record'>
+    <view class='Time'>
+        <view class='small'>2019-04</view>
+        <view class='big'>21</view>
+    </view>
+    <view class='Information'>
+        <view class='allinfor'>
+            <text>胡帅博</text>
+            <text>男</text>
+            <text>1997-10-19</text>
+        </view>
+        <view>捐献一定比例的慈善款这些资金用于帮助该慈善机构在南非继续工作，为弱势​​学童提供每日三餐</view>
+    </view>
+    <navigator class='Detailed'>详情</navigator>
+</view>
