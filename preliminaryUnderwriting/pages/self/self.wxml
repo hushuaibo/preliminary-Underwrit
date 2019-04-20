@@ -3,8 +3,8 @@
 <view class="login-cont">
    <view class="login-input">
       <!-- <input class="inputs"  bindinput="bindKeycompany" placeholder="请输入您的公司名称" /> -->
-      <picker bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}">
-         <view class="picker">您的公司：{{array[index]}}</view>
+      <picker bindchange="bindPickerChange" value="{{array[index].company}}" range="{{companyArray}}">
+         <view class="picker">公司：{{array[index].company}}</view>
       </picker>
    </view>
    <view class="login-input">
