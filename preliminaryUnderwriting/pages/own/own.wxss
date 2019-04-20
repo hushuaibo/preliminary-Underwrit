@@ -1,1 +1,48 @@
-/* pages/own/own.wxss */
+.Record{
+    width: 95%;
+    height: 160rpx;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+}
+.Time{
+    width: 20%;
+    height: 110rpx;
+    border-radius: 20rpx;
+    padding:25rpx 0; 
+    background-color: #4DAFE3;
+    line-height: 55rpx;
+    text-align: center;
+}
+.Information{
+    width: 54%;
+    height: 140rpx;
+    padding: 10rpx 3%;
+    border-radius: 20rpx;
+    background-color: #4DAFE3;
+    font-size: 14px;
+    line-height: 47rpx;
+}
+.allinfor{
+    display: flex;
+    justify-content: space-between;
+}
+.Detailed{
+    width: 20%;
+    height: 100%;
+    border-radius: 20rpx;
+    background-color: #4DAFE3;
+    line-height: 160rpx;
+    text-align: center;
+    font-weight: bold;
+}
+.small{
+    font-size: 14px;
+    font-weight: bold;
+}
+.big{
+    font-size: 24px;
+    font-weight: bold;
+}

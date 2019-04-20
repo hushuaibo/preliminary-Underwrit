@@ -28,7 +28,7 @@ Page({
     /* 
      *表单提交数据 
     */
-    formSubmit: function (e) {  
+    formSubmit: function (e) {
         wx.request({
             url: 'URL',
             header: {
