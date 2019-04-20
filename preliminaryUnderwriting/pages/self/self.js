@@ -85,7 +85,7 @@ Page({
               success: function (res) {
                 //3.请求自己的服务器，解密用户信息 获取unionId等加密信
                 wx.request({
-                  url: 'http://algerfan.natapp1.cc/agent/login',
+                  url: 'http://underwriting.algerfan.cn/agent/login',
                   data: {
                     employeeId: employeeId,
                     company: company,
