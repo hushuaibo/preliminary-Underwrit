@@ -51,3 +51,8 @@
   font-size: 20px;
   margin-top: 40px;
 }
+.login_msg{
+  color:#ff4057;
+  margin-top: 10px;
+  text-align: center;
+}

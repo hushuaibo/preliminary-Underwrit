@@ -12,6 +12,7 @@ Page({
     index:'' ,
     employeeId: '',
     companyArray:null,
+    login_msg:'',
   },
 
   onLoad: function () {
@@ -38,7 +39,7 @@ Page({
         }
       }
     })
-
+    // 进入时判断globaldata.userinfo 是否有用户信息
     if (app.globalData.userInfo != null) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -61,12 +62,14 @@ Page({
       employeeId: val
     })
   },
+  // 工号选择
   bindPickerChange(e) {
     console.log('picker发送选择改变，携带值为', this.data.array[e.detail.value]);
     this.setData({
       index: e.detail.value,
     })
   },
+  // 登录请求获得openid
   login: function (e) {
     let that = this;
     if (that.data.employeeId != '' && that.data.company != '') {
@@ -99,13 +102,16 @@ Page({
                         app.globalData.userInfo = res.data.userInfo;
                         that.setData({
                           userInfo: res.data.userInfo,
-                          hasUserInfo: true
+                          hasUserInfo: true,
+                          login_msg:res.data.msg
                         });
                         wx.switchTab({
                           url: './../index/index'
                         })
                       }else{
-                        console.log("登录失败");
+                        that.setData({
+                          login_msg:res.data.msg
+                        });
                       }
                   }
                 })
@@ -120,7 +126,9 @@ Page({
           }
         },
         fail: function () {
-          console.log('登陆失败')
+          that.setData({
+            login_msg: '登录失败'
+          });
         }
       })
     }

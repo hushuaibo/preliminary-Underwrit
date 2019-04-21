@@ -14,4 +14,5 @@
       微信登录
    </button>
    <block wx:else>请更新您的微信</block>
+   <view class="login_msg">{{login_msg}}</view>
 </view>
