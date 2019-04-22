@@ -264,3 +264,45 @@ tbody tr td .operation .op_agree{
 tbody tr td .operation .op_refuse{
     background-color: #FF5722;
 }
+
+/* 添加时的模态框 */
+.add_modal{
+    z-index: 999;
+    width: 360px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: fixed;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+}
+.modal_tit{
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    background-color: rgb(248, 248, 248);
+    padding: 0px 80px 0px 20px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    overflow: hidden;
+    border-radius: 2px 2px 0px 0px;
+}
+.modal_con{
+    padding: 20px;
+}
+.modal_con .con_input{
+    
+}
+
+.shadow{
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 998;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.3;
+}
