@@ -10,6 +10,7 @@ Page({
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad: function () {
+    console.log(app.globalData.userInfo);
     var userInfoTmp = app.globalData.userInfo;
     if (userInfoTmp == null) {
       wx.redirectTo({

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预核保-后台</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+
+    <div class="aside_nav">
+        <div class="nav-tit flex"><span>预</span></div>
+        <ul>
+            <li class="active">
+                <a class="flex" href=""> <img src="images/dengdai.png"> <span>待审核</span></a>
+            </li>
+            <li>
+                <a class="flex" href="">已审核</a>
+            </li>
+            <li>
+                <a class="flex" href="">公司管理</a>
+            </li>
+            <li>
+                <a class="flex" href="">代理人管理</a>
+            </li>
+            <li>
+                <a class="flex" href="">公告信息</a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrap ">
+
+        <div class="header">
+            <ul class="rt_nav">
+
+                <li>
+                    <img class="nav_img" src="images/default.jpg">
+                </li>
+                <li>
+                    <a class="quit_icon">
+                        <img src="images/quit.png">
+                        <span>安全退出</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tables" style="margin: 0px">
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+            <p>1111111</p>
+        </div>
+    </div>
+</body>
+
+</html>

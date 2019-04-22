@@ -8,48 +8,45 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    array: ['中国未来工作室未来工作室', '未来工作室测试2号', '未来工作室测试3号', '未来工作室测试4号'],
-    index: 0,
-    employeeId: ''
+    array: null ,
+    index:'' ,
+    employeeId: '',
+    companyArray:null,
+    login_msg:'',
   },
 
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    console.log(app.globalData.userInfo)
+    
+    // 请求公司名称
+    wx.request({
+      url: 'http://underwriting.algerfan.cn/company/select',
+      method: 'get',
+      header: {
+        'content-type': 'application/json' 
+      },
+      success: res => {
+        let companyList=res.data.companyList;
+        let companyArray =[];
+        if(res.data.status==1){
+          for(let i in companyList){
+            companyArray.push(companyList[i].company);
+          }
+          this.setData({
+            array: companyList,
+            companyArray:companyArray
+          })
+        }
+      }
+    })
+    // 进入时判断globaldata.userinfo 是否有用户信息
+    if (app.globalData.userInfo != null) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
       wx.switchTab({
         url: './../index/index'
-      })
-
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-
-        wx.switchTab({
-          url: './../index/index'
-        })
-      }
-
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-          wx.switchTab({
-            url: './../index/index'
-          })
-        }
       })
     }
   },
@@ -65,17 +62,19 @@ Page({
       employeeId: val
     })
   },
+  // 工号选择
   bindPickerChange(e) {
     console.log('picker发送选择改变，携带值为', this.data.array[e.detail.value]);
     this.setData({
       index: e.detail.value,
     })
   },
+  // 登录请求获得openid
   login: function (e) {
     let that = this;
     if (that.data.employeeId != '' && that.data.company != '') {
       let employeeId = that.data.employeeId;
-      let company = that.data.array[that.data.index];
+      let company = that.data.companyArray[that.data.index];
       wx.login({
         success: function (res) {
           var code = res.code;//登录凭证
@@ -103,13 +102,16 @@ Page({
                         app.globalData.userInfo = res.data.userInfo;
                         that.setData({
                           userInfo: res.data.userInfo,
-                          hasUserInfo: true
+                          hasUserInfo: true,
+                          login_msg:res.data.msg
                         });
                         wx.switchTab({
                           url: './../index/index'
                         })
                       }else{
-                        console.log("登录失败");
+                        that.setData({
+                          login_msg:res.data.msg
+                        });
                       }
                   }
                 })
@@ -124,7 +126,9 @@ Page({
           }
         },
         fail: function () {
-          console.log('登陆失败')
+          that.setData({
+            login_msg: '登录失败'
+          });
         }
       })
     }
