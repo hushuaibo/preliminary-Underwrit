@@ -55,4 +55,5 @@
   color:#ff4057;
   margin-top: 10px;
   text-align: center;
+  line-height: 25px;
 }
