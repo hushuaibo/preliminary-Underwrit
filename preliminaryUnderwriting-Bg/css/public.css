@@ -11,7 +11,8 @@ a{
     text-decoration: none;
 }
 a:active, a:hover {
-    outline: 0
+    outline: 0;
+    text-decoration: none;
 }
 
 table {
@@ -121,7 +122,24 @@ ul li{
    padding: 20px;
    box-sizing: border-box;
    overflow-y:auto;
-   overflow-x: hidden 
+   overflow-x: hidden;
+  
+}
+.anim{
+    animation: mar_r 1.5s;
+    opacity: 0; 
+    animation-fill-mode:forwards;
+    transform: translateX(80px);
+}
+@keyframes mar_r {
+    0% {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 .tables p{
     height: 100px;
@@ -212,7 +230,37 @@ input{
 }
 thead tr th{
     color: #676a6c;
+    font-size: 15px;
 }
 tbody tr td{
     color: #676a6c;
+}
+tbody tr td .operation{
+    position: relative;
+    box-sizing: border-box;
+}
+tbody tr td .operation a{
+    display: inline-block;
+    height: 23px;
+    line-height: 23px;
+    padding: 0 10px;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 13px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+tbody tr td .operation a:hover{
+    text-shadow:  0px 0px 1px #fff;
+}
+tbody tr td:last-child{
+    width: 200px;
+}
+tbody tr td .operation .op_agree{
+    background-color: #009688;
+}
+tbody tr td .operation .op_refuse{
+    background-color: #FF5722;
 }
