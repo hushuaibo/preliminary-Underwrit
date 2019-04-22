@@ -1,32 +1,38 @@
 <!--pages/submit/submit.wxml-->
 <form report-submit='false' bindsubmit="formSubmit">
+    <!-- 姓名 -->
     <view class='Main'>
         <view class='Title'>姓名</view>
-        <input class='ipt' name='userName' type='text' placeholder='请填写'></input>
+        <input class='ipt' name='name' type='text' placeholder='请填写' value='{{form_info}}'></input>
     </view>
-
+    <!-- 性别 -->
     <view class="section">
-    <picker bindchange="bindPickerChange" name="userGender" value="{{index}}" range="{{Gender}}">
+    <picker bindchange="bindPickerChange" name="sex" value="{{index}}" range="{{Gender}}">
         <view class="picker">
         <view>性别</view>
         <view class='paddingRight'>{{Gender[index]}}</view>
         </view>
     </picker>
     </view>
-
+    <!-- 出生年月 -->
     <view class="section">
-    <picker mode="date" value="{{date}}" name="userBirth" start="1900-01-01" end="2019-12-30" bindchange="bindDateChange">
+    <picker mode="date" value="{{date}}" name="birthday" start="1900-01-01" end="2019-12-30" bindchange="bindDateChange">
         <view class="picker">
         <view>出生年月</view>
         <view class='paddingRight'>{{date}}</view>
         </view>
     </picker>
     </view>
-
-    <view class="section">
-    <textarea class='textarea' name="userHealthy" placeholder="客户健康状况"  />
+    <!-- 姓名 -->
+    <view class='Main'>
+        <view class='Title'>联系方式</view>
+        <input class='ipt' name='userName' type='text' placeholder='请填写' value='{{form_info}}'></input>
     </view>
-
+    <!-- 健康状况 -->
+    <view class="section">
+    <textarea class='textarea' name="introduce" placeholder="客户健康状况" value='{{form_info}}' />
+    </view>
+    <!-- 提交按钮 -->
     <view class='btn'>
         <button class='button' form-type='submit'>提交信息</button>
     </view>
