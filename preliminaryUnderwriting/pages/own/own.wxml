@@ -1,16 +1,29 @@
 <!--pages/own/own.wxml-->
-<view class='Record'>
-    <view class='Time'>
-        <view class='small'>2019-04</view>
-        <view class='big'>21</view>
-    </view>
-    <view class='Information'>
-        <view class='allinfor'>
-            <text>胡帅博</text>
-            <text>男</text>
-            <text>1997-10-19</text>
+<view class='OneView' wx:for="{{List}}" wx:for-item="item" wx:key="index">
+    <view class='information'>
+        <view>
+            <text>姓名：</text>
+            <text>{{item.name}}</text>
         </view>
-        <view>捐献一定比例的慈善款这些资金用于帮助该慈善机构在南非继续工作，为弱势​​学童提供每日三餐</view>
+        <view>
+            <text>性别：</text>
+            <text wx:if="{{item.sex == 'male'}}">男</text>
+            <text wx:if="{{item.sex == 'female'}}">女</text>
+        </view>
+        <view>
+            <text>出生年月：</text>
+            <text>{{item.birthday}}</text>
+        </view>
+        <view>
+            <text>健康状况：</text>
+            <text>{{item.introduce}}</text>
+        </view>
     </view>
-    <navigator class='Detailed'>详情</navigator>
+    <view class='operation'>
+        <view>
+            <text>Time : </text>
+            <text> {{item.submitTime}}</text>
+        </view>
+        <navigator class='btn'>详情</navigator>
+    </view>
 </view>

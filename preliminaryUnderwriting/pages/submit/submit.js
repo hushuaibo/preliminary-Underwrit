@@ -14,7 +14,6 @@ Page({
    *性别选择
    */
     bindPickerChange(e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value)
         this.setData({
             index: e.detail.value
         })
@@ -23,7 +22,6 @@ Page({
    *日期选择
    */
     bindDateChange(e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value)
         this.setData({
             date: e.detail.value
         })
@@ -55,7 +53,6 @@ Page({
                 content: '请对核保人健康状况进行简单描述',
             })
         }else{
-
             wx.request({
                 url: 'http://underwriting.algerfan.cn/underwriting/insert',
                 header: {
@@ -67,7 +64,7 @@ Page({
                     'name': e.detail.value.name,
                     'sex': e.detail.value.sex == 0 ? 'male' : 'female',
                     'birthday': e.detail.value.birthday,
-                    'phone': e.detail.value.phone,
+                    'phone': e.detail.value.phone == undefined ? '' : e.detail.value.phone,
                     'introduce': e.detail.value.introduce,
                     'encryptedData': this.data.encryptedData,
                     'iv': this.data.iv,

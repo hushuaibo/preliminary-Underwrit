@@ -1,48 +1,42 @@
-.Record{
+page{
+    background-color:white;
+}
+.OneView{
     width: 95%;
-    height: 160rpx;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    height: 300rpx;
+    background-color: #4DAFE3;
+    margin: 15rpx auto;
+    border-radius: 8rpx;
+}
+.information{
+    width: 90%;
+    height: 200rpx;
+    padding:10rpx 5%; 
+    line-height: 50rpx;
+    font-size: 14px;
     color: white;
+    border-bottom: 1rpx solid white;
+    overflow: hidden;
 }
-.Time{
-    width: 20%;
-    height: 110rpx;
-    border-radius: 20rpx;
-    padding:25rpx 0; 
-    background-color: #4DAFE3;
-    line-height: 55rpx;
-    text-align: center;
-}
-.Information{
-    width: 54%;
-    height: 140rpx;
-    padding: 10rpx 3%;
-    border-radius: 20rpx;
-    background-color: #4DAFE3;
-    font-size: 14px;
-    line-height: 47rpx;
-}
-.allinfor{
+.operation{
+    width: 90%;
+    height: 60rpx;
+    padding: 10rpx 5%;
+    line-height: 60rpx;
     display: flex;
+    flex-direction:row;
+    font-size: 12px;
+    color: white;
     justify-content: space-between;
+    align-items: center;
 }
-.Detailed{
-    width: 20%;
-    height: 100%;
-    border-radius: 20rpx;
-    background-color: #4DAFE3;
-    line-height: 160rpx;
-    text-align: center;
-    font-weight: bold;
-}
-.small{
+.btn{
+    width: 130rpx;
+    height: 60rpx;
     font-size: 14px;
-    font-weight: bold;
-}
-.big{
-    font-size: 24px;
-    font-weight: bold;
+    text-align: center;
+    line-height: 60rpx;
+    background-color: white;
+    color: #4DAFE3;
+    border-radius: 3rpx;
 }

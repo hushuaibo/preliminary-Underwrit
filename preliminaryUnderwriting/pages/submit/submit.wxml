@@ -1,5 +1,5 @@
 <!--pages/submit/submit.wxml-->
-<form report-submit='false' bindsubmit="formSubmit">
+<form report-submit='true' bindsubmit="formSubmit">
     <!-- 姓名 -->
     <view class='Main'>
         <view class='Title'>姓名</view>

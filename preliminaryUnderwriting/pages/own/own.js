@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      List:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      
   },
 
   /**
@@ -26,7 +26,36 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      let that = this;
+      wx.login({
+          success: function (res) {
+              var code = res.code;
+              if (code) {
+                  wx.getUserInfo({
+                      success: function (res) {
+                          wx.request({
+                              url: 'http://underwriting.algerfan.cn/underwriting/findUnderwriting',
+                              header: {
+                                  'content-type': 'application/json'
+                              },
+                              method: 'get',
+                              data: {
+                                  'encryptedData': res.encryptedData,
+                                  'iv': res.iv,
+                                  code: code
+                              },
+                              success: function (res) {
+                                  console.log(res.data.list);
+                                  that.setData({
+                                      List: res.data.list
+                                  })
+                              }
+                          })
+                      }
+                  })
+              }
+          }
+      })
   },
 
   /**
