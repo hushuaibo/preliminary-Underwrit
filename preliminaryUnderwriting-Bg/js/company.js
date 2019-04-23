@@ -9,3 +9,6 @@ $('.oper_close').click(function(){
 $('.sub_no').click(function(){
     closeModal();
 })
+$('.shadow').click(function(){
+    closeModal();
+})
