@@ -49,13 +49,34 @@
         </div>
         <div class="add_modal">
             <div class="modal_tit">信息</div>
-            <div class="modal_con">内容</div>
+            <div class="modal_oper">
+                <a href="javascript:;" class="oper_close"></a>
+            </div>
+            <div class="modal_con">
+                <div class="con_input">
+                    <div class="con_input_l con_input_alike">
+                        <span>公司名称</span>
+                    </div>
+                    <input class="con_input_r con_input_alike" type="text" placeholder="请输入添加的公司名称" />
+                </div>
+                <div class="con_input">
+                    <div class="con_input_l con_input_alike">
+                        <span>工号</span>
+                    </div>
+                    <input class="con_input_r con_input_alike" type="text" placeholder="请输入公司工号的前四位" />
+                </div>
+            </div>
+            <div class="modal_sub">
+                <a class="sub_yes">提交</a>
+                <a class="sub_no">取消</a>
+            </div>
         </div>
         <div class="shadow"></div>
         <div class="tables" style="margin: 0px">
             <div class="t_box anim">
                 <div class="box_tit">
                     <span>公司工号管理</span>
+                    <div class="box_add">添加</div>
                 </div>
                 <div class="box_table">
                     <table class="table table-bordered table-hover">
@@ -109,7 +130,9 @@
             </div>
         </div>
     </div>
-    
-</body>
 
+</body>
+<script src="js/jquery-2.1.0.js"></script>
+<script src="js/index.js"></script>
+<script src="js/company.js"></script>
 </html>
