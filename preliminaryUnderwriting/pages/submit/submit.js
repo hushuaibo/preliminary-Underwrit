@@ -8,7 +8,8 @@ Page({
       Gender: ['男', '女'],
       encryptedData: '',
       iv: '',
-      code: ''
+      code: '',
+      phone: ''
   },
   /*
    *性别选择
@@ -53,6 +54,7 @@ Page({
                 content: '请对核保人健康状况进行简单描述',
             })
         }else{
+            console.log(e.detail.value.phone);
             wx.request({
                 url: 'http://underwriting.algerfan.cn/underwriting/insert',
                 header: {
@@ -64,31 +66,39 @@ Page({
                     'name': e.detail.value.name,
                     'sex': e.detail.value.sex == 0 ? 'male' : 'female',
                     'birthday': e.detail.value.birthday,
-                    'phone': e.detail.value.phone == undefined ? '' : e.detail.value.phone,
+                    'phone': e.detail.value.phone,
                     'introduce': e.detail.value.introduce,
                     'encryptedData': this.data.encryptedData,
                     'iv': this.data.iv,
                     'code': this.data.code
                 },
                 success: function (res) {
-                    console.log(res);
                     wx.showModal({
                         title: '提示',
                         content: res.data.msg,
                         success: function (res) {
-                            if (res.confirm) {
-                                Foo.setData({
-                                    form_info: '',
-                                    index:'',
-                                    date:''
-                                })
-                            } else {
-                                Foo.setData({
-                                    form_info: '',
-                                    index: '',
-                                    date: ''
-                                })
-                            }
+                            Foo.setData({
+                                form_info: '',
+                                index:'',
+                                date:'',
+                                phone:''
+                            });
+                            wx.login({
+                                success: function (res) {
+                                    var code = res.code;
+                                    if (code) {
+                                        wx.getUserInfo({
+                                            success: function (res) {
+                                                Foo.setData({
+                                                    encryptedData: res.encryptedData,
+                                                    iv: res.iv,
+                                                    code: code
+                                                })
+                                            }
+                                        })
+                                    }
+                                }
+                            })
                         }
                     })
                 }

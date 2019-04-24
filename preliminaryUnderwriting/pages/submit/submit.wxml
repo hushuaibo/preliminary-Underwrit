@@ -26,7 +26,7 @@
     <!-- 姓名 -->
     <view class='Main'>
         <view class='Title'>联系方式</view>
-        <input class='ipt' name='userName' type='text' placeholder='请填写' value='{{form_info}}'></input>
+        <input class='ipt' name='phone' type='text' placeholder='请填写' value='{{form_info}}'></input>
     </view>
     <!-- 健康状况 -->
     <view class="section">
