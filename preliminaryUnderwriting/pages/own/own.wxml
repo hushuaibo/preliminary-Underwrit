@@ -24,6 +24,5 @@
             <text>Time : </text>
             <text> {{item.submitTime}}</text>
         </view>
-        <navigator class='btn'>详情</navigator>
     </view>
 </view>
