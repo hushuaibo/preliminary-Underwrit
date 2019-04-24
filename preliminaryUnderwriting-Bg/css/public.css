@@ -310,7 +310,9 @@ tbody tr td .operation .op_agree{
 tbody tr td .operation .op_refuse{
     background-color: #FF5722;
 }
-
+tbody tr td .operation .op_look{
+    background-color: #1D84C6;
+}
 /* 添加时的模态框 */
 .add_modal{
     z-index: 999;
