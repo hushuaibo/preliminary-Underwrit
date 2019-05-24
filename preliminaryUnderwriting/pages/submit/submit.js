@@ -89,11 +89,18 @@ Page({
                                     if (code) {
                                         wx.getUserInfo({
                                             success: function (res) {
-                                                Foo.setData({
-                                                    encryptedData: res.encryptedData,
-                                                    iv: res.iv,
-                                                    code: code
-                                                })
+                                              Foo.setData({
+                                                  encryptedData: res.encryptedData,
+                                                  iv: res.iv,
+                                                  code: code
+                                              })
+                                              console.log(res.encryptedData)
+                                              console.log(res.iv)
+                                              console.log(code)
+                                              console.log(e.detail.value.name)
+                                              wx.navigateTo({
+                                                url: "/pages/file/file?encryptedData=" + res.encryptedData + "&iv=" + res.iv + "&code=" + code + "&name=" + e.detail.value.name
+                                              });
                                             }
                                         })
                                     }

@@ -34,6 +34,6 @@
     </view>
     <!-- 提交按钮 -->
     <view class='btn'>
-        <button class='button' form-type='submit'>提交信息</button>
+        <button class='button' form-type='submit'>下一步</button>
     </view>
 </form>
