@@ -1,1 +1,20 @@
 /* pages/file/file.wxss */
+.ALL{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.newFile{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #10a78e;
+  text-align: center;
+  line-height: 150px;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: -75px;
+  margin-left: -75px;
+}

@@ -85,6 +85,7 @@ Page({
                             });
                             wx.login({
                                 success: function (res) {
+                                  console.log(res)
                                     var code = res.code;
                                     if (code) {
                                         wx.getUserInfo({
@@ -94,12 +95,8 @@ Page({
                                                   iv: res.iv,
                                                   code: code
                                               })
-                                              console.log(res.encryptedData)
-                                              console.log(res.iv)
-                                              console.log(code)
-                                              console.log(e.detail.value.name)
                                               wx.navigateTo({
-                                                url: "/pages/file/file?encryptedData=" + res.encryptedData + "&iv=" + res.iv + "&code=" + code + "&name=" + e.detail.value.name
+                                                url: "/pages/file/file?encryptedData=" + res.encryptedData + "&iv=" + res.iv + "&code=" + code + "&phone=" + e.detail.value.phone
                                               });
                                             }
                                         })

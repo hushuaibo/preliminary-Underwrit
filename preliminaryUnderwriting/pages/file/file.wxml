@@ -1,2 +1,4 @@
-<!--pages/web/web.wxml-->
- <web-view src='{{webUrl}}'></web-view>
+<!-- <web-view src='{{webUrl}}' bindmessage="bindGetMsg"></web-view> -->
+<view class='ALL'>
+  <view class="newFile" bindtap='chooseFile'>{{TIP}}</view>
+</view>
