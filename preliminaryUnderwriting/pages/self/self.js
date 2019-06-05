@@ -20,7 +20,7 @@ Page({
     
     // 请求公司名称
     wx.request({
-      url: 'http://underwriting.algerfan.cn/company/select',
+      url: 'https://underwriting.algerfan.cn/company/select',
       method: 'get',
       header: {
         'content-type': 'application/json' 
@@ -84,7 +84,7 @@ Page({
               success: function (res) {
                 //3.请求自己的服务器，解密用户信息 获取unionId等加密信
                 wx.request({
-                  url: 'http://underwriting.algerfan.cn/agent/login',
+                  url: 'https://underwriting.algerfan.cn/agent/login',
                   data: {
                     employeeId: employeeId,
                     company: company,

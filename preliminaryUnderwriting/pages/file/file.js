@@ -31,7 +31,7 @@ Page({
             success: function (ress) {
               code = ress.code;
                 wx.uploadFile({
-                  url: 'http://underwriting.algerfan.cn/underwriting/upload',
+                  url: 'https://underwriting.algerfan.cn/underwriting/upload',
                   filePath: file.tempFiles[NUMBER].path,
                   name: 'file',
                   formData: {

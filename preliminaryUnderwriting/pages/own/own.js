@@ -34,7 +34,7 @@ Page({
                   wx.getUserInfo({
                       success: function (res) {
                           wx.request({
-                              url: 'http://underwriting.algerfan.cn/underwriting/findUnderwriting',
+                              url: 'https://underwriting.algerfan.cn/underwriting/findUnderwriting',
                               header: {
                                   'content-type': 'application/json'
                               },

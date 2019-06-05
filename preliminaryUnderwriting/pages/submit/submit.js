@@ -56,7 +56,7 @@ Page({
         }else{
             console.log(e.detail.value.phone);
             wx.request({
-                url: 'http://underwriting.algerfan.cn/underwriting/insert',
+                url: 'https://underwriting.algerfan.cn/underwriting/insert',
                 header: {
                     'content-type': 'application/x-www-form-urlencoded'
                 },
