@@ -33,12 +33,19 @@ Page({
     formSubmit: function (e) {
         var Foo = this;
         var name = /^[\u4E00-\u9FA5]{2,4}$/;
+        var phoneNum = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
         if (e.detail.name == '' || !name.test(e.detail.value.name)){
             wx.showModal({
                 title: '提示',
                 content: '请输入有效的核保人姓名！',
             })
-        } else if (e.detail.value.sex != 0 && e.detail.value.sex != 1){
+        } else if (e.detail.name.phone == '' || !phoneNum.test(e.detail.value.phone)){
+          wx.showModal({
+            title: '提示',
+            content: '请输入有效的手机号！',
+          })
+        } 
+        else if (e.detail.value.sex != 0 && e.detail.value.sex != 1){
             wx.showModal({
                 title: '提示',
                 content: '请完善核保人性别！',
@@ -75,7 +82,7 @@ Page({
                 success: function (res) {
                     wx.showModal({
                         title: '提示',
-                        content: res.data.msg,
+                        content: '是否上传附件',
                         success: function (res) {
                             Foo.setData({
                                 form_info: '',

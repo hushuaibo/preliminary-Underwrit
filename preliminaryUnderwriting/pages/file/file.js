@@ -41,13 +41,14 @@ Page({
                     'phone': phone
                   },
                   success(res) {
+                    NUMBER++;
                     console.log(res);
                     if (NUMBER == file.tempFiles.length){
                       wx.showModal({
                         title: '提示',
                         content: '上传成功',
                         success: function (res) {
-                          wx.navigateTo({
+                          wx.switchTab({
                             url: "/pages/submit/submit"
                           })
                         }
@@ -55,7 +56,7 @@ Page({
                     }
                   }
                 })
-                NUMBER++;
+              
                 }
             })
           }
