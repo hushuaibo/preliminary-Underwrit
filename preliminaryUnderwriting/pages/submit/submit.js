@@ -39,7 +39,7 @@ Page({
                 title: '提示',
                 content: '请输入有效的核保人姓名！',
             })
-        } else if (e.detail.name.phone == '' || !phoneNum.test(e.detail.value.phone)){
+        } else if (e.detail.value.phone == '' || !phoneNum.test(e.detail.value.phone)){
           wx.showModal({
             title: '提示',
             content: '请输入有效的手机号！',
